@@ -12,6 +12,11 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Reservation
 {
+    public function __toString()
+    {
+        return $this->passenger ."-". $this->nbReservedSeats;
+    }
+
 
     /**
     * @ORM\ManyToMany(targetEntity="WCS\CoavBundle\Entity\User", mappedBy="reservations")

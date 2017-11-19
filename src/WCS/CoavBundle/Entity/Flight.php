@@ -12,6 +12,12 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Flight
 {
+    public function __toString()
+    {
+        return $this->departure ."-". $this->arrival ."-". $this->pilot ."-". $this->id;
+    }
+
+
     /**
      * @var int
      *

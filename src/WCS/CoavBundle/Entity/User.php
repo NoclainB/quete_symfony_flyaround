@@ -12,7 +12,10 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class User
 {
-
+    public function __toString()
+    {
+        return $this->firstName ." - ". $this->lastName;
+    }
 
     /**
     * @ORM\ManyToMany(targetEntity="WCS\CoavBundle\Entity\Reservation", inversedBy="passengers")
@@ -95,7 +98,7 @@ class User
     /**
      * @var int
      * @ORM\ManyToOne(targetEntity="WCS\CoavBundle\Entity\Review")
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\JoinColumn(nullable=true)
      */
     private $reviews;
 
